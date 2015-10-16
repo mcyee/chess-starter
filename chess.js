@@ -302,6 +302,11 @@ Chess.prototype = {
 
 };
 
+
+function clickSquare() {
+	alert("clicked the canvas!");
+}
+
 /**
  * Notification that the window has loaded and it's not safe to start the game.
  */
@@ -313,6 +318,9 @@ function onWindowLoad() {
 	var chess = new Chess(canvas);
 	chess.initialize();
 	chess.run();
+
+	// don't include brackets?
+	canvas.onclick = clickSquare;
 };
 
 // Register our load callback on the load function
